@@ -247,10 +247,10 @@ Armand
 
 <div class="page">
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0px;">
-        <img src="photo1.JPG" style="max-width:50%; border-radius:12px;">
-        <img src="photo2.JPG" style="max-width:50%; border-radius:12px;">
-        <img src="photo1.JPG" style="max-width:50%; border-radius:12px;">
-        <img src="photo1.JPG" style="max-width:50%; border-radius:12px;">
+        <img src="photo1.JPG" style="max-width:51%; border-radius:8px;">
+        <img src="photo2.JPG" style="max-width:51%; border-radius:8px;">
+        <img src="photo1.JPG" style="max-width:51%; border-radius:8px;">
+        <img src="photo1.JPG" style="max-width:51%; border-radius:8px;">
     </div>
 </div>
 
@@ -270,6 +270,7 @@ const pages = document.querySelectorAll(".page");
 const counter = document.getElementById("counter");
 const music = document.getElementById("music");
 const musicButton = document.getElementById("musicButton");
+const arrow = document.getElementById("arrow");
 
 
 function nextPage() {
@@ -284,6 +285,10 @@ function nextPage() {
 
         counter.textContent = (current + 1) + " / " + pages.length;
 
+        // Cache la flèche sur la dernière page
+        if (current === pages.length - 1) {
+            arrow.style.display = "none";
+        }
 
         // Tentative de lancement de la musique à la page 4
         if (current === 3) {
